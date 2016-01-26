@@ -29,8 +29,10 @@ fs.readdir("./", function(err, files){
                     {
                         console.log("All done")
                     }
-                //console.log("Contents of " + files[i] + "\n\n" + data); //display the contents of the files
+                console.log("Contents of " + files[i] + "\n\n" + data); //display the contents of the files
             });
         }
     }
+   
+}
 });
