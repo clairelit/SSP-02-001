@@ -21,7 +21,8 @@ fs.readdir("./", function(err, files){
            console.log("Reading file " + files[i]);
             fs.readFile(files[i], {encoding: "utf8", flag: "r"}, function(error, data) { //reading the files here to access the array "files"
                 if(error) { //using the built in error handler in node
-                    throw error;       
+                    throw error;     
+                    i++;
                 }
                 console.log("Contents of " + files[i] + "\n\n" + data); //display the contents of the files
             });
