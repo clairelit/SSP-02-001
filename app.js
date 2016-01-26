@@ -33,6 +33,5 @@ fs.readdir("./", function(err, files){
             });
         }
     }
-   
-}
+
 });
