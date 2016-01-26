@@ -7,14 +7,14 @@ fs.readdir("./", function(err, files){
 	console.log("I got the contents of the directory.");
 
     //Looping through the files
-	//for(var i in files) {
-		//console.log("File: " + files[i]);
+	for(var i in files) {
+		console.log("File: " + files[i]);
 	}
 
 
 //Now I must read the contents of the files
  for(var i in files) { //looping through the files in the directory
-        console.log("File:" + files[i]); 
+        //console.log("File:" + files[i]); 
      
      
        if(files[i] != "app.js" && files[i] != ".git"){ // If the file name isnt equal to \app.js and if it's not equal to .git\
