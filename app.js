@@ -24,7 +24,12 @@ fs.readdir("./", function(err, files){
                     throw error;     
                     i++;
                 }
-                console.log("Contents of " + files[i] + "\n\n" + data); //display the contents of the files
+                
+                if(i == files.length -2)
+                    {
+                        console.log("All done")
+                    }
+                //console.log("Contents of " + files[i] + "\n\n" + data); //display the contents of the files
             });
         }
     }
