@@ -14,3 +14,7 @@ fs.readdir("./", function(err, files){
 );
 
 //Now I must read the contents of the files
+fs readFile('.',function(err,data) {
+    if err(throw err);
+    console.log (data);
+});
