@@ -17,10 +17,10 @@ fs.readdir("./", function(err, files){
         console.log("File:" + files[i]); 
      
      
-       if(files[i] != "app.js"){ // If the file name isnt equal to \app.js\
+       if(files[i] != "app.js" || files[i] != ".git"){ // If the file name isnt equal to \app.js\
             fs.readFile(files[i], {encoding: "utf8", flag: "r"}, function(error, data) { //reading the files here to access the array "files"
                 if(error) { //using the built in error handler in node
-                    throw error;        
+                    throw error;       
                 }
                 console.log("Contents of " + files[i] + "\n\n" + data); //display the contents of the files
             });
