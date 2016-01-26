@@ -13,14 +13,17 @@ fs.readdir("./", function(err, files){
 
 
 //Now I must read the contents of the files
-if(files[i] != "app.js")//If the file name is not equal to app.js{
-    
-fs readFile(files[i],{encoding:"utf8", flag:"r"}, function(err,data) {
-    if (error) {throw error;
-  }
-}
-            
-   console.log ("Contents of " + files[i] + "\n\n" + data);
-}
-
+ for(var i in files) { //looping through the files in the directory
+        console.log("File:" + files[i]); 
+     
+     
+       if(files[i] != "app.js"){ // If the file name isnt equal to \app.js\
+            fs.readFile(files[i], {encoding: "utf8", flag: "r"}, function(error, data) { //reading the files here to access the array "files"
+                if(error) { //using the built in error handler in node
+                    throw error;        
+                }
+                console.log("Contents of " + files[i] + "\n\n" + data); //display the contents of the files
+            });
+        }
+    }
 });
