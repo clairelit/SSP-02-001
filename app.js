@@ -10,11 +10,17 @@ fs.readdir("./", function(err, files){
 	for(var i in files) {
 		console.log("File: " + files[i]);
 	}
-}	
-);
+
 
 //Now I must read the contents of the files
-fs readFile('.',function(err,data) {
-    if (err) throw err;
-   console.log (data);
+if(files[i] != "app.js")//If the file name is not equal to app.js{
+    
+fs readFile(files[i],{encoding:"utf8", flag:"r"}, function(err,data) {
+    if (error) {throw error;
+  }
+}
+            
+   console.log ("Contents of " + files[i] + "\n\n" + data);
+}
+
 });
