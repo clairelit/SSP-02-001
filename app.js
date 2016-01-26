@@ -7,8 +7,8 @@ fs.readdir("./", function(err, files){
 	console.log("I got the contents of the directory.");
 
     //Looping through the files
-	for(var i in files) {
-		console.log("File: " + files[i]);
+	//for(var i in files) {
+		//console.log("File: " + files[i]);
 	}
 
 
@@ -17,7 +17,7 @@ fs.readdir("./", function(err, files){
         console.log("File:" + files[i]); 
      
      
-       if(files[i] != "app.js" && files[i] != ".git"){ // If the file name isnt equal to \app.js\
+       if(files[i] != "app.js" && files[i] != ".git"){ // If the file name isnt equal to \app.js and if it's not equal to .git\
            console.log("Reading file " + files[i]);
             fs.readFile(files[i], {encoding: "utf8", flag: "r"}, function(error, data) { //reading the files here to access the array "files"
                 if(error) { //using the built in error handler in node
