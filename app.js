@@ -11,7 +11,12 @@ fs.readdir("./", function(err, files){
 		console.log("File: " + files[i]);
 	}
 
-
+//Counts the number of files in the array
+var numFiles = files.length;
+    
+//To know what file I'm on
+var currentFile =0;
+    
 //Now I must read the contents of the files
  for(var i in files) { //looping through the files in the directory
         //console.log("File:" + files[i]); 
