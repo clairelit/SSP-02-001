@@ -1,30 +1,37 @@
+//Requiring the file system from the node api
 var fs = require("fs");
-var currentFile = 0;
-var currentFileNew =0;
-console.log("About to read the file names in TestContent");
-fs.readdir("./TestContent", onDirContents);
+console.log("Just about to call the fs.readir");
 
-function onDirContents(err,files)
-{
-    console.log("I got the file names in TestContent directory");
-    for (var i in files) 
-    {
- 		console.log("File:  " + files[i]);
-		var fileInfoObject = new Object();
+//Writing the function to read the contents of the SSP-02-001 directory.
+fs.readdir("./", function(err, files){
+	console.log("I got the contents of the directory.");
 
-        fs.readFile("./TestContent/" +files[i], {encoding: 'utf8', flag: 'r'}, function(error, data)
-        {
-            if(error) throw (error);
-            {
-                console.log("Contents of file:" +files[currentFile++] +"   " +data);
-				fileInfoObject.name = (files[currentFileNew++]);
-				fileInfoObject.contents = data;
-            }
-			
-			var fileInfoArray = [0];
-			fileInfoArray.push(fileInfoObject.name, fileInfoObject.contents);
-			console.log (fileInfoObject);
+    //Looping through the files
+	for(var i in files) {
+		console.log("File: " + files[i]);
+	}
 
-	    });           
+
+//Now I must read the contents of the files
+ for(var i in files) { //looping through the files in the directory
+        //console.log("File:" + files[i]); 
+     
+     
+       if(files[i] != "app.js" && files[i] != ".git"){ // If the file name isnt equal to \app.js and if it's not equal to .git\
+           console.log("Reading file " + files[i]);
+            fs.readFile(files[i], {encoding: "utf8", flag: "r"}, function(error, data) { //reading the files here to access the array "files"
+                if(error) { //using the built in error handler in node
+                    throw error;     
+                    i++;
+                }
+                
+                if(i == files.length -2)
+                    {
+                        console.log("All done")
+                    }
+                console.log("Contents of " + files[i] + "\n\n" + data); //display the contents of the files
+            });
+        }
     }
-} 
+
+});
