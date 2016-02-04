@@ -27,10 +27,10 @@ var currentFile =0;
             fs.readFile(files[i], {encoding: "utf8", flag: "r"}, function(error, data) { //reading the files here to access the array "files"
                 if(error) { //using the built in error handler in node
                     throw error;     
-                    i++;
+                    //i++;
                 }
                 
-                if(i == files.length -2)
+                else(i == files.length -2)
                     {
                         console.log("All done")
                     }

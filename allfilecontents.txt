@@ -1,0 +1,5 @@
+#Welcome to Week 2 of Server Side Programming
+This is file 1
+How are you?This is file 3
+My favourite colour is yellowThis is file 2
+Today is Tuesday
